@@ -1,6 +1,8 @@
 title: 菊池いつきログ
 url: https://itukikikuti.github.io/blog/
 permalink: /:year/:month/:day/:title
-markdown: redcarpet 
-redcarpet:
-  extensions: ["autolink"]
+markdown: CommonMarkGhPages
+commonmark:
+  options: ["UNSAFE", "SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+  
