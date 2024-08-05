@@ -1,6 +1,7 @@
 title: 菊池いつきログ
 url: https://itukikikuti.github.io/blog/
 permalink: /:year/:month/:day/:title
+timezone: Asia/Tokyo
 markdown: CommonMarkGhPages
 commonmark:
   options: ["UNSAFE", "SMART", "FOOTNOTES"]
