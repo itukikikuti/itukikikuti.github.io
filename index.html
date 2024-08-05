@@ -6,13 +6,12 @@
     <head>
         <meta charset="UTF-8">
         <title>{{ site.title }}</title>
-        <base href="https://itukikikuti.github.io/blog">
     </head>
     <body>
         <ul>
             {% for post in site.posts %}
             <li>
-                <a href="{{ post.url }}">{{ post.title }}</a>
+                <a href="/blog{{ post.url }}">{{ post.title }}</a>
             </li>
             {% endfor %}
         </ul>
