@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<Layout title="私のブログ">
+    <h1>最新のブログ記事</h1>
+    <ul>
+        {posts.map(post => (
+            <li>
+                <a href={`/blog/${post.slug}/`}>
+                    <h2>{post.data.title}</h2>
+                    <p>{post.data.pubDate.toLocaleDateString()}</p>
+                    {post.data.description && <p>{post.data.description}</p>}
+                </a>
+            </li>
+        ))}
+    </ul>
+</Layout>
