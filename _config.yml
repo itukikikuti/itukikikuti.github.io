@@ -1,9 +1,0 @@
-title: 菊池いつきログ
-url: https://itukikikuti.github.io
-permalink: /:year:month:day
-timezone: Asia/Tokyo
-markdown: CommonMarkGhPages
-commonmark:
-  options: ["UNSAFE", "SMART", "FOOTNOTES"]
-  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
-  
