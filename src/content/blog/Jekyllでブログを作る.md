@@ -1,8 +1,8 @@
 ---
-categories: Jekyll
+title: Jekyllでブログを作る
+pubDate: 2024-08-05T00:00:00+09:00
+tags: ['Jekyll']
 ---
-
-{% raw %}
 
 とりあえず、0から作るのが好きなのでテーマは使わない。
 
@@ -65,5 +65,3 @@ end
 - `index.html`
 
 とりあえず、Jekyllですることは最小限にして、フロントエンドの技術でどうにかしたい。
-
-{% endraw %}
