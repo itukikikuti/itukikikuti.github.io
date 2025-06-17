@@ -9,7 +9,7 @@ const posts = await getCollection('blog');
     {posts.map(post => (
     <article class="mb-4">
         <h2>{post.data.title}</h2>
-        <p class="text-muted">{post.data.pubDate.toISOString()}</p>
+        <p class="text-muted">{post.data.pubDate.toUTCString()}</p>
         <a class="btn btn-primary" href={`/blog/${post.slug}/`}>続きを読む</a>
     </article>
     ))}
