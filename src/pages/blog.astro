@@ -5,17 +5,12 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('blog');
 ---
 
-<Layout title="私のブログ">
-    <h1>最新のブログ記事</h1>
-    <ul>
-        {posts.map(post => (
-            <li>
-                <a href={`/blog/${post.slug}/`}>
-                    <h2>{post.data.title}</h2>
-                    <p>{post.data.pubDate.toLocaleDateString()}</p>
-                    {post.data.description && <p>{post.data.description}</p>}
-                </a>
-            </li>
-        ))}
-    </ul>
+<Layout title={Astro.title}>
+    {posts.map(post => (
+    <article class="mb-4">
+        <h2>{post.data.title}</h2>
+        <p class="text-muted">{post.data.pubDate.toLocaleDateString()}</p>
+        <a class="btn btn-primary" href={`/blog/${post.slug}/`}>続きを読む</a>
+    </article>
+    ))}
 </Layout>

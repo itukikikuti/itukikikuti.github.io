@@ -15,9 +15,9 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-    <article>
-        <h1>{entry.data.title}</h1>
-        <p>{entry.data.pubDate.toString()}</p>
+    <article class="mb-4">
+        <h2>{entry.data.title}</h2>
+        <p class="text-muted">{entry.data.pubDate.toString()}</p>
         {entry.data.tags && (<p>{entry.data.tags.join(', ')}</p>)}
         <Content />
     </article>
