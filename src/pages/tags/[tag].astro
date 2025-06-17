@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+    const uniqueTags = new Set<string>();
+    posts.forEach(post => {
+        post.data.tags?.forEach(tag => uniqueTags.add(tag.toLowerCase()));
+    });
+    return Array.from(uniqueTags).map(tag => ({
+        params: { tag: tag },
+        props: { tag: tag },
+    }));
+}
+
+const { tag } = Astro.props;
+const posts = await getCollection('blog');
+const filteredPosts = posts.filter(post => post.data.tags?.some(t => t.toLowerCase() === tag)).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const pageTitle = `タグ: ${tag}`;
+---
+
+<Layout title={pageTitle}>
+    {filteredPosts.map(post => (
+    <article class="mb-4">
+        <h2>{post.data.title}</h2>
+        <p class="text-muted">{post.data.pubDate.toUTCString()}</p>
+        <a class="btn btn-primary" href={`/blog/${post.slug}/`}>続きを読む</a>
+    </article>
+    ))}
+</Layout>
