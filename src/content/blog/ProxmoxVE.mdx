@@ -4,7 +4,7 @@ pubDate: 2025-06-17T22:00:00+09:00
 tags: ['Proxmox VE', '自宅サーバ']
 ---
 
-import { Image } from 'astro:assets';
+import MyImage from '../../components/MyImage.astro';
 import screenshot01 from '../../assets/images/WIN_20250617_19_54_04_Pro.jpg';
 import screenshot02 from '../../assets/images/WIN_20250617_19_56_21_Pro.jpg';
 import screenshot03 from '../../assets/images/WIN_20250617_19_57_15_Pro.jpg';
@@ -18,28 +18,28 @@ import screenshot10 from '../../assets/images/WIN_20250617_20_02_43_Pro.jpg';
 
 スクリーンショットをめっちゃ撮った。以下のスクリーンショットの通りにインストールする。
 
-<Image src={screenshot01} alt="ローカルでインポートされた画像" loading="lazy" />
+<MyImage src={screenshot01} alt="ローカルでインポートされた画像1" />
 
-<Image src={screenshot02} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot02} alt="ローカルでインポートされた画像2" />
 
-<Image src={screenshot03} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot03} alt="ローカルでインポートされた画像3" />
 
-<Image src={screenshot04} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot04} alt="ローカルでインポートされた画像4" />
 自動で入力されることもある。
 
-<Image src={screenshot05} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot05} alt="ローカルでインポートされた画像5" />
 
-<Image src={screenshot06} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot06} alt="ローカルでインポートされた画像6" />
 IPアドレス、ゲートウェイ、DNS Serverは自動で入力されることもある。ゲートウェイ、DNS Serverは通常、ルータのアドレスでいい。
 
-<Image src={screenshot07} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot07} alt="ローカルでインポートされた画像7" />
 最終確認。この通りになってればいい。
 
-<Image src={screenshot08} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot08} alt="ローカルでインポートされた画像8" />
 インストール中。
 
-<Image src={screenshot09} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot09} alt="ローカルでインポートされた画像9" />
 完了。
 
-<Image src={screenshot10} alt="ローカルでインポートされた画像" width={1920} loading="lazy" />
+<MyImage src={screenshot10} alt="ローカルでインポートされた画像10" />
 こういう画面になったら、ほかの端末からブラウザで管理画面に入れる。

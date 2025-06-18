@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+const { src, alt } = Astro.props;
+---
+
+<div>
+    <Image src={src} alt={alt} class="img-thumbnail" data-bs-toggle="modal" data-bs-target={`#${alt}`} loading="lazy" />
+    
+    <div class="modal fade" id={alt} tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <Image src={src} alt={alt} class="img-fluid" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
