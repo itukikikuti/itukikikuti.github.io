@@ -6,7 +6,7 @@ export async function getStaticPaths() {
     const posts = await getCollection('blog');
     const uniqueTags = new Set<string>();
     posts.forEach(post => {
-        post.data.tags?.forEach(tag => uniqueTags.add(tag.toLowerCase()));
+        post.data.tags?.forEach(tag => uniqueTags.add(tag));
     });
     return Array.from(uniqueTags).map(tag => ({
         params: { tag: tag },
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.props;
 const posts = await getCollection('blog');
-const filteredPosts = posts.filter(post => post.data.tags?.some(t => t.toLowerCase() === tag)).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const filteredPosts = posts.filter(post => post.data.tags?.some(t => t === tag)).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 const pageTitle = `タグ: ${tag}`;
 ---
 
