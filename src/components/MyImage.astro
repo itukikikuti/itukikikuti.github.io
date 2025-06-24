@@ -4,13 +4,13 @@ const { src, alt } = Astro.props;
 ---
 
 <div>
-    <Image src={src} alt={alt} class="img-thumbnail" data-bs-toggle="modal" data-bs-target={`#imageModal${alt}`} width={320} loading="lazy" />
+    <Image src={src} alt={alt} class="img-thumbnail" data-bs-toggle="modal" data-bs-target={`#imageModal${alt}`} width={320} />
     
     <div class="modal fade" id={`imageModal${alt}`} tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content bg-transparent border-0">
                 <div class="modal-body d-flex justify-content-center align-items-center p-0" data-bs-dismiss="modal">
-                    <Image src={src} alt={alt} class="img-fluid" loading="lazy" />
+                    <Image src={src} alt={alt} class="img-fluid" />
                 </div>
             </div>
         </div>
