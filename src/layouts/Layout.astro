@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import "../styles/main.scss";
 
-
 const { title } = Astro.props;
 const posts = await getCollection('blog');
 const uniqueTags = new Set<string>();
